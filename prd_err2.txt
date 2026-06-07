@@ -1,0 +1,1 @@
+[deprecated] docs +fetch is using the v1 API. Check the installed lark-doc skill first; if it is not the v2 skill, run `lark-cli update` to upgrade skills.

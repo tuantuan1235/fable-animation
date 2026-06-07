@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "doc_id": "RIZydKBECoSB3WxWFfRc55ssnWe",
+    "has_more": true,
+    "length": 334,
+    "log_id": "20260607224032AC7B1A4A45481B0F863E",
+    "markdown": "0 | 2026-06-07 上午 | 第一次写，**定位错误**（写成技术重构方案 / engineering proposal） | 小洞 |\n\n| v2.0 | 2026-06-07 晚 | 重写为产品视角，**但把\"30s\"硬编码成产品规格**（实际只是 demo 参数） | 小洞 |\n\n| **v2.1** | 2026-06-07 晚 | **时长参数化**：把\"30s 短视频\"改为\"短视\n",
+    "message": "Document fetched successfully",
+    "next_offset": 400,
+    "offset": 200,
+    "title": "",
+    "total_length": 9789
+  }
+}

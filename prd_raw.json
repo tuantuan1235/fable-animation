@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "doc_id": "RIZydKBECoSB3WxWFfRc55ssnWe",
+    "has_more": true,
+    "length": 370,
+    "log_id": "20260607224017823172FC8FAB120D2A24",
+    "markdown": "# 寓言动画创作平台 · 产品需求文档 (PRD)\n\n\u003e **产品名称**：寓言动画创作平台（暂定，可改名）\n\u003e\n\u003e **文档版本**：v2.1\n\u003e\n\u003e **修订日期**：2026-06-07\n\u003e\n\u003e **作者**：小洞（产品助理） · 楚童（产品决策）\n\u003e\n\u003e **状态**：待评审\n\n---\n\n## 0. 修订记录\n\n| 版本 | 日期 | 主要变更 | 作者 |\n\n|---|---|---|---|\n\n| v1.\n",
+    "message": "Document fetched successfully",
+    "next_offset": 200,
+    "offset": 0,
+    "title": "",
+    "total_length": 9789
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "fable-animation-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "寓言动画创作平台 - 让单人创作者在1小时内把寓言想法变成可发布的短视频",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "dev:studio": "npm run dev --workspace=apps/remotion-studio",
+    "build": "npm run build --workspace=apps/web",
+    "render": "npm run render --workspace=apps/remotion-studio",
+    "db:migrate": "npm run db:migrate --workspace=packages/db",
+    "lint": "npm run lint --workspaces --if-present"
+  }
+}
