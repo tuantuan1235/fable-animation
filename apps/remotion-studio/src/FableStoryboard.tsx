@@ -3,8 +3,6 @@ import {
   AbsoluteFill,
   useCurrentFrame,
   useVideoConfig,
-  Audio,
-  Img,
   interpolate,
   spring,
   Sequence,
@@ -14,8 +12,6 @@ import type { Scene, Storyboard } from '@fable/shared';
 // 场景渲染组件
 const SceneRender: React.FC<{
   scene: Scene;
-  sceneIndex: number;
-  totalScenes: number;
 }> = ({ scene }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -108,21 +104,24 @@ export const FableStoryboard: React.FC<{
 }> = ({ storyboard }) => {
   const { fps } = useVideoConfig();
 
-  let currentFrame = 0;
+  // 使用 useMemo 预计算每个 scene 的帧偏移，避免在 render 中使用可变变量
+  const sceneTimings = React.useMemo(() => {
+    let offset = 0;
+    return storyboard.scenes.map((scene) => {
+      const durationInFrames = Math.round(scene.durationSeconds * fps);
+      const from = offset;
+      offset += durationInFrames;
+      return { scene, from, durationInFrames };
+    });
+  }, [storyboard.scenes, fps]);
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#000' }}>
-      {storyboard.scenes.map((scene, index) => {
-        const durationInFrames = Math.round(scene.durationSeconds * fps);
-        const from = currentFrame;
-        currentFrame += durationInFrames;
-
-        return (
-          <Sequence key={scene.id} from={from} durationInFrames={durationInFrames}>
-            <SceneRender scene={scene} sceneIndex={index} totalScenes={storyboard.scenes.length} />
-          </Sequence>
-        );
-      })}
+      {sceneTimings.map(({ scene, from, durationInFrames }, index) => (
+        <Sequence key={scene.id} from={from} durationInFrames={durationInFrames}>
+          <SceneRender scene={scene} />
+        </Sequence>
+      ))}
     </AbsoluteFill>
   );
 };

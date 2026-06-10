@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  fable-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fable-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MINIMAX_API_KEY=${MINIMAX_API_KEY:-}
+      - MINIMAX_GROUP_ID=${MINIMAX_GROUP_ID:-}
+    volumes:
+      - fable-data:/app/data
+
+volumes:
+  fable-data:
+    driver: local

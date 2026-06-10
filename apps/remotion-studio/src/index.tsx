@@ -1,3 +1,4 @@
+import React from 'react';
 import { registerRoot, Composition } from 'remotion';
 import { FableStoryboard } from './FableStoryboard';
 import { createEmptyStoryboard } from '@fable/shared';
@@ -43,8 +44,8 @@ const Root: React.FC = () => {
         component={FableStoryboard}
         durationInFrames={Math.round(totalDuration * 30)}
         fps={30}
-        compositionWidth={720}
-        compositionHeight={1280}
+        width={720}
+        height={1280}
         defaultProps={{ storyboard: sampleStoryboard }}
       />
     </>

@@ -1,0 +1,13 @@
+node_modules
+.next
+.git
+.github
+.vscode
+.idea
+data
+*.db
+*.log
+.env
+.env.local
+prd_*.json
+prd_*.txt
