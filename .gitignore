@@ -6,3 +6,16 @@ dist/
 *.db
 *.db-journal
 data/
+
+# 部署敏感信息
+check_aliyun.py
+check_port.py
+open_port.py
+*.pem
+
+# TS 构建产物
+*.tsbuildinfo
+
+# 系统文件
+.DS_Store
+Thumbs.db
